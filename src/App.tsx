@@ -10,6 +10,19 @@ import './App.css';
 // import './lessons/lesson8/lesson8';
 
 function App() {
+    const makeCounter = (startNum:number) => {
+        return {
+            value:startNum,
+            increase (){this.value++},
+            decrease(){this.value--},
+            reset(){this.value=0},
+            set(){this.value=startNum}
+        }
+    }
+
+    let counter = makeCounter(5)
+    let counter2 = makeCounter(10)
+
     return (
         <div className="container">
             {/*<Lesson1 />*/}

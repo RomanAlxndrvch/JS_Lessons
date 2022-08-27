@@ -23,6 +23,10 @@ console.log('lesson 2');
 
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
+const sum = (n1:number,n2:number) => {
+  return n1+n2
+}
+console.log(sum(3,9))
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
@@ -33,6 +37,19 @@ console.log('lesson 2');
 // counter2(); // 1
 // counter(); // 3
 
+const makeCounter = () => {
+  let counter= 0
+  return ()=>{ return counter++}
+}
+
+let counter = makeCounter()
+let counter2 = makeCounter()
+console.log(counter()+ ' func1')
+console.log(counter() +' func1')
+console.log(counter2() +' func2')
+console.log(counter() +' func1')
+console.log(counter2() +' func2')
+
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
@@ -40,6 +57,20 @@ console.log('lesson 2');
 // decrease: -1
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
+
+const makeCounter_3 = (startNum:number) => {
+  return {
+    value:startNum,
+    increase (){this.value++},
+    decrease(){this.value--},
+    reset(){this.value=0},
+    set(){this.value=startNum}
+  }
+}
+
+let counter_3 = makeCounter_3(5)
+let counter2_3 = makeCounter_3(10)
+
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
