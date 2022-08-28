@@ -135,8 +135,20 @@ function fib(n: number): number {
     }
 }
 
+const printList = (tree: any): any => {
+    console.log(tree.value)
+    if (tree.next) {
+        printList(tree.next)
+    }
+}
 
-console.log(factorial(5))
+
+function printReverseList(tree: any) {
+    if (tree.next) {
+        printReverseList(tree.next)
+    }
+    console.log(tree.value)
+}
 
 
 // Task 06

@@ -9,38 +9,35 @@ import './App.css';
 // import './lessons/lesson7/lesson7';
 // import './lessons/lesson8/lesson8';
 
-let list = {
-    value: 1,
-    next: {
-        value: 2,
-        next: {
-            value: 3,
-            next: {
-                value: 4,
-                next: null
-            }
-        }
-    }
-};
+let arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]
 
 function App() {
-    const printList = (tree: any): any => {
-        let arr = []
-        if (tree.next === null) {
-            arr.push(tree.value)
+
+    /*
+        function flat(arr: any): any {
+            let newArr: any[] = []
+            if (Array.isArray(arr)) {
+                arr.forEach((el: any) => newArr.push(el))
+            }
+            else {
+                flat(arr)
+            }
+            return newArr
         }
-        else {
-            printList(tree.next)
-        }
-        return arr
+    */
+
+
+    let newArr: any[] = []
+
+    function flat(arr: typeof arr4) {
+        arr.forEach((el: any) => {
+            return Array.isArray(el) ? flat(el) : newArr.push(el)
+        })
+        return newArr
     }
 
-    console.log(printList(list))
 
-    /*  function fib(n: number): number {
-          return n <= 1 ? n : fib(n - 1) + fib(n - 2);
-      }*/
-
+    console.log(flat(arr4))
 
     return (
         <div className="container">
