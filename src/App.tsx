@@ -9,19 +9,38 @@ import './App.css';
 // import './lessons/lesson7/lesson7';
 // import './lessons/lesson8/lesson8';
 
-function App() {
-    const makeCounter = (startNum:number) => {
-        return {
-            value:startNum,
-            increase (){this.value++},
-            decrease(){this.value--},
-            reset(){this.value=0},
-            set(){this.value=startNum}
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
         }
     }
+};
 
-    let counter = makeCounter(5)
-    let counter2 = makeCounter(10)
+function App() {
+    const printList = (tree: any): any => {
+        let arr = []
+        if (tree.next === null) {
+            arr.push(tree.value)
+        }
+        else {
+            printList(tree.next)
+        }
+        return arr
+    }
+
+    console.log(printList(list))
+
+    /*  function fib(n: number): number {
+          return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+      }*/
+
 
     return (
         <div className="container">
