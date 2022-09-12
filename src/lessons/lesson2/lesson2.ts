@@ -20,13 +20,12 @@ console.log('lesson 2');
 // https://learn.javascript.ru/recursion
 // https://www.youtube.com/watch?v=Kuq6oIN3PH0
 
-
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 const sum = (n1: number, n2: number) => {
-    return n1 + n2
-}
-console.log(sum(3, 9))
+  return n1 + n2;
+};
+console.log(sum(3, 9));
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
@@ -38,19 +37,19 @@ console.log(sum(3, 9))
 // counter(); // 3
 
 const makeCounter = () => {
-    let counter = 0
-    return () => {
-        return counter++
-    }
-}
+  let counter = 0;
+  return () => {
+    return counter++;
+  };
+};
 
-let counter = makeCounter()
-let counter2 = makeCounter()
-console.log(counter() + ' func1')
-console.log(counter() + ' func1')
-console.log(counter2() + ' func2')
-console.log(counter() + ' func1')
-console.log(counter2() + ' func2')
+let counter = makeCounter();
+let counter2 = makeCounter();
+console.log(counter() + ' func1');
+console.log(counter() + ' func1');
+console.log(counter2() + ' func2');
+console.log(counter() + ' func1');
+console.log(counter2() + ' func2');
 
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
@@ -61,26 +60,25 @@ console.log(counter2() + ' func2')
 // set: установить счетчик в заданное значение;
 
 const makeCounter_3 = (startNum: number) => {
-    return {
-        value: startNum,
-        increase() {
-            this.value++
-        },
-        decrease() {
-            this.value--
-        },
-        reset() {
-            this.value = 0
-        },
-        set() {
-            this.value = startNum
-        }
-    }
-}
+  return {
+    value: startNum,
+    increase() {
+      this.value++;
+    },
+    decrease() {
+      this.value--;
+    },
+    reset() {
+      this.value = 0;
+    },
+    set() {
+      this.value = startNum;
+    },
+  };
+};
 
-let counter_3 = makeCounter_3(5)
-let counter2_3 = makeCounter_3(10)
-
+let counter_3 = makeCounter_3(5);
+let counter2_3 = makeCounter_3(10);
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
@@ -100,60 +98,63 @@ let counter2_3 = makeCounter_3(10)
 //Напишите функцию sumTo(n), которая вычисляет сумму чисел
 
 const sum_2 = (n: number): number => {
-    if (n === 1) {
-        return 1
-    }
-    else {
-        return n + sum_2(n - 1)
-    }
-}
+  if (n === 1) {
+    return 1;
+  } else {
+    return n + sum_2(n - 1);
+  }
+};
 
 const sum_3 = (n: number) => {
-    let finalSum = 0
-    for (let i = 0; i <= n; i++) {
-        finalSum += i
-    }
-    return finalSum
-}
-
+  let finalSum = 0;
+  for (let i = 0; i <= n; i++) {
+    finalSum += i;
+  }
+  return finalSum;
+};
 
 const factorial = (n: number): number => {
-    if (n != 1) {
-        return n * factorial(n - 1)
-    }
-    else {
-        return 1
-    }
-}
+  if (n != 1) {
+    return n * factorial(n - 1);
+  } else {
+    return 1;
+  }
+};
 
 function fib(n: number): number {
-    if (n <= 1) {
-        return n
-    }
-    else {
-        return fib(n - 1) + fib(n - 2)
-    }
+  if (n <= 1) {
+    return n;
+  } else {
+    return fib(n - 1) + fib(n - 2);
+  }
 }
 
 const printList = (tree: any): any => {
-    console.log(tree.value)
-    if (tree.next) {
-        printList(tree.next)
-    }
-}
-
+  console.log(tree.value);
+  if (tree.next) {
+    printList(tree.next);
+  }
+};
 
 function printReverseList(tree: any) {
-    if (tree.next) {
-        printReverseList(tree.next)
-    }
-    console.log(tree.value)
+  if (tree.next) {
+    printReverseList(tree.next);
+  }
+  console.log(tree.value);
 }
-
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
+function flat(arr: any): any {
+  let newArr: any[] = [];
+  if (Array.isArray(arr)) {
+    arr.forEach((el: any) => newArr.push(el));
+  } else {
+    flat(arr);
+  }
+  return newArr;
+}
+
 // just a plug
-export default () => {
-};
+export default () => {};
