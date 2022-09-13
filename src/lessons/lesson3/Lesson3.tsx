@@ -63,7 +63,15 @@ const Lesson3 = () => {
                     <div className={classes.container}>
                         <div className={classes.poster}><img src={serachResult.Poster} alt="Poster"/></div>
                         <div className={classes.info}>
-                            {serachResult.Title}
+                            <div className={classes.top}>
+                                <span>{serachResult.Title} </span>
+                                <span>{serachResult.Runtime}</span>
+                                <span>{serachResult.Genre}</span>
+                                <span>{serachResult.imdbRating}</span>
+                            </div>
+                            <div style={{paddingTop: '20px'}}>{serachResult.Country}</div>
+                            <div style={{paddingTop: '20px'}}>{serachResult.Actors}</div>
+                            <div style={{paddingTop: '20px'}}>{serachResult.Year}</div>
                         </div>
                     </div>
 

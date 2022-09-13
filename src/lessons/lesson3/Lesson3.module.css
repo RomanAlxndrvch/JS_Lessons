@@ -24,3 +24,9 @@ img {
 .info {
     flex: 1;
 }
+
+.top {
+    display: flex;
+    justify-content: space-around;
+}
+
