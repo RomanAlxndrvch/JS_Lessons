@@ -1,3 +1,5 @@
+import {log} from "util";
+
 console.log('lesson 4');
 
 // http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
@@ -8,24 +10,41 @@ console.log('lesson 4');
 // Создайте промис, который постоянно находиться в состоянии pending.
 // В конструкторе промиса выведите в консоль сообщение "Promise is created".
 
+/*const promise1 = new Promise((resolve, reject) => {
+    console.log("Promise is created")
+})
+console.log(promise1)*/
+
 
 // Task 02
 // Создайте промис, который после создания сразу же переходит в состояние resolve
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
 
+/*const promise = new Promise((resolve, reject) => {
+    resolve('Promise Data')
+}).then((data) => console.log(data))
+
+const promise1 = Promise.resolve('PromiseData').then((data) => console.log(data))*/
 
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
 // и возвращает строку 'Promise Error'
 // Получите данные промиса и выведите их в консоль
 
+/*const promise1 = Promise.reject('Error').catch((data) => console.log(data))*/
 
 // Task 04
 // Создайте промис, который переходит в состояние resolved через 3с.
 // (Используйте setTimeout)
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise Data')
+    }, 3000)
+}).then(data => console.log(data))
 
 
 // Task 05
@@ -57,6 +76,6 @@ console.log('lesson 4');
 // и выведите в консоль {name, age, city}
 
 
-
 // just a plug
-export default ()=>{};
+export default () => {
+};
