@@ -1,4 +1,5 @@
 import {log} from "util";
+import {posix} from "path";
 
 console.log('lesson 4');
 
@@ -40,11 +41,11 @@ const promise1 = Promise.resolve('PromiseData').then((data) => console.log(data)
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
 
-const promise = new Promise((resolve, reject) => {
+/*const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('Promise Data')
     }, 3000)
-}).then(data => console.log(data))
+}).then(data => console.log(data))*/
 
 
 // Task 05
@@ -69,12 +70,63 @@ const promise = new Promise((resolve, reject) => {
 // Добавьте два метода then и передайте созданные функции.
 
 
+const onSuccess = (par: string) => {
+    return par + 'Roma'
+}
+const print = (par: string) => {
+    console.log(par)
+}
+const promise = new Promise<string>((resolve, reject) => {
+    setTimeout(() => {
+        resolve('My name is ')
+    }, 1000)
+}).then(data => {
+    print(onSuccess(data))
+})
+
+
 // Task 7
 // Создайте три промиса. Первый промис возвращает объект { name: "Anna" } через 2с,
 // второй промис возвращает объект {age: 16} через 3 с, а третий {city: ''} через 4с.
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
+/*
+const promise1 = new Promise<{ name: string }>((resolve, reject) => {
+    setTimeout(() => {
+        resolve({name: 'Anna'})
+    }, 2000)
+})
+
+const promise2 = new Promise<{ age: number }>((resolve, reject) => {
+    setTimeout(() => {
+        resolve({age: 16})
+    }, 3000)
+})
+
+const promise3 = new Promise<{ city: string }>((resolve, reject) => {
+    setTimeout(() => {
+        resolve({city: ''})
+    }, 4000)
+})
+
+let name: string
+promise1.then((data) => {
+    return name = data.name
+})
+let age: number
+promise2.then((data) => {
+    return age = data.age
+})
+let city: string
+promise3.then((data) => {
+    return city = data.city
+})
+    .then(() => {
+        console.log({name, age, city})
+    })
+
+*/
 
 // just a plug
 export default () => {
