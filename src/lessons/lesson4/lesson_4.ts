@@ -1,11 +1,10 @@
-import {log} from "util";
-import {posix} from "path";
+import { log } from 'util';
+import { posix } from 'path';
 
 console.log('lesson 4');
 
 // http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
 // https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-
 
 // Task 01
 // Создайте промис, который постоянно находиться в состоянии pending.
@@ -15,7 +14,6 @@ console.log('lesson 4');
     console.log("Promise is created")
 })
 console.log(promise1)*/
-
 
 // Task 02
 // Создайте промис, который после создания сразу же переходит в состояние resolve
@@ -47,7 +45,6 @@ const promise1 = Promise.resolve('PromiseData').then((data) => console.log(data)
     }, 3000)
 }).then(data => console.log(data))*/
 
-
 // Task 05
 // Создайте литерал объекта handlePromise со следующими свойствами:
 // promise, resolve, reject, onSuccess, onError
@@ -61,7 +58,6 @@ const promise1 = Promise.resolve('PromiseData').then((data) => console.log(data)
 // свойства resolve и reject получают ссылки на соответствующие функции
 // resolve и reject. Следующие два обработчика запускают методы resolve и reject.
 
-
 // Task 06
 // Создайте промис, который через 1 с возвращает строку "My name is".
 // Создайте функцию onSuccess, которая получает один параметр,
@@ -69,21 +65,19 @@ const promise1 = Promise.resolve('PromiseData').then((data) => console.log(data)
 // Создайте функцию print, которая выводит в консоль значение своего параметра
 // Добавьте два метода then и передайте созданные функции.
 
-
-const onSuccess = (par: string) => {
-    return par + 'Roma'
-}
-const print = (par: string) => {
-    console.log(par)
-}
-const promise = new Promise<string>((resolve, reject) => {
-    setTimeout(() => {
-        resolve('My name is ')
-    }, 1000)
-}).then(data => {
-    print(onSuccess(data))
-})
-
+// const onSuccess = (par: string) => {
+//     return par + 'Roma'
+// }
+// const print = (par: string) => {
+//     console.log(par)
+// }
+// const promise = new Promise<string>((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('My name is ')
+//     }, 1000)
+// }).then(data => {
+//     print(onSuccess(data))
+// })
 
 // Task 7
 // Создайте три промиса. Первый промис возвращает объект { name: "Anna" } через 2с,
@@ -129,5 +123,4 @@ promise3.then((data) => {
 */
 
 // just a plug
-export default () => {
-};
+export default () => {};
