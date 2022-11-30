@@ -1,5 +1,6 @@
 export default () => {
 }
+
 /*
 const hanna = {
     name: 'Hanna'
@@ -31,7 +32,4 @@ console.log(alex.defaultAge)
 // @ts-ignore
 alex.showName()
 ;*/
-
-
-
 
