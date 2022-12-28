@@ -112,6 +112,39 @@ console.log('Lesson 6');
 // Создать массив объектов данного класса.
 // Вывести список покупателей в алфавитном порядке и список покупателей, у которых номер кредитной карточки находится в заданном диапазоне.
 
+class buyer{
+    name:string
+    lastName :string
+    address:string
+    cardNumber:number
+
+    constructor(name:string,lastName:string,address:string,cardNumber:number) {
+        this.name = name
+        this.lastName = lastName
+        this.address = address
+        this.cardNumber = cardNumber
+    }
+
+    get buyerName (){
+        return  this.name
+    }
+
+    get buyerLastName (){
+        return this.lastName
+    }
+
+    get buyerAddress (){
+        return this.address
+    }
+
+    get buyerCardNumber (){
+        return this.cardNumber
+    }
+}
+const buyer1 = new buyer('Roman','Troian','Canada',123)
+
+console.log(buyer1.buyerName)
+
 // Task 05
 // Создать класс машина - имеющий марку, число цилиндров, мощность. Определить конструктор и функцию печати.
 // Создать производный класс – грузовик, имеющий грузоподъемность кузова.
