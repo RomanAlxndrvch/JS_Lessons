@@ -12,10 +12,48 @@ console.log('Lesson 6');
 // Создать массив из десяти элементов такого типа, упорядочить записи по возрастанию среднего балла.
 // Добавить возможность вывода фамилий и номеров групп студентов, имеющих оценки, равные только 4 или 5.
 
+// class student {
+//
+//     static minimumScore = 4
+//
+//     name: string;
+//     lastName: string
+//     groupNumber: number
+//     scores: number[]
+//
+//     constructor(name: string, lastName: string, groupNumber: number, scores: number[]) {
+//         this.name = name
+//         this.lastName = lastName
+//         this.groupNumber = groupNumber
+//         this.scores = scores
+//     }
+//
+//     showStudentWithScoreOverFour() {
+//         if (this.scores.every(el => el >= student.minimumScore)) console.log(this.name + ' ' + this.groupNumber)
+//     }
+// }
+//
+// const studentGroup = [
+//     new student('Roman', 'Troian', 2, [4, 5, 4, 5, 5]),
+//     new student('Anastasiia', 'Troian', 5, [5, 5, 5, 5, 5]),
+//     new student('John', 'Levandovsi', 3, [2, 5, 4, 5, 5]),
+//     new student('Danial', 'Del Pierro', 2, [2, 2, 2, 2, 5]),
+//     new student('Diana', 'Kasova', 1, [3, 2, 4, 5, 1]),
+//     // new student('Roman', 'Troian', 5, [4, 5, 4, 5, 5]),
+//     // new student('Roman', 'Troian', 5, [4, 5, 4, 5, 5]),
+//     // new student('Roman', 'Troian', 5, [4, 5, 4, 5, 5]),
+//     // new student('Roman', 'Troian', 5, [4, 5, 4, 5, 5]),
+//     // new student('Roman', 'Troian', 5, [4, 5, 4, 5, 5]),
+// ]
+//
+//
+// studentGroup.forEach(el => el.showStudentWithScoreOverFour())
+
 // Task 02
 // Создать класс с двумя переменными. Добавить конструктор с входными параметрами и инициализирующий члены класса по умолчанию.
 // Можно ли создать метод на экземпляре класса который будет удалять сам экземпляр класса?
 // Можно ли создать метод класса который будет удалять экземпляр класса?
+
 
 // Task 03
 // Составить описание класса для представления времени. Предусмотреть возможности установки времени и изменения его отдельных
@@ -23,6 +61,50 @@ console.log('Lesson 6');
 // Создать методы изменения времени на заданное количество часов, минут и секунд.
 // Создать метод выводящий время в строке формата HH:MM:SS
 // Создать класс по вышеуказанному описанию
+
+
+// class Time {
+//     seconds: number
+//     minutes: number
+//     hours: number
+//
+//     constructor(seconds: number, minutes: number, hours: number) {
+//         this.seconds = seconds
+//         this.minutes = minutes
+//         this.hours = hours
+//     }
+//
+//     set secondsSetter(sec: number) {
+//         if (sec > 60) throw new Error('Seconds too big')
+//         this.seconds = sec
+//     }
+//
+//     set minutesSetter(min: number) {
+//         if (min > 60) throw new Error('Minutes too big')
+//         this.minutes = min
+//     }
+//
+//     set hoursSetter(hours: number) {
+//         if (hours > 24) throw new Error('Hours too big')
+//         this.hours = hours
+//     }
+//
+//
+//     setTime(seconds: number, minutes: number, hours: number) {
+//         this.secondsSetter = seconds
+//         this.minutesSetter = minutes
+//         this.hoursSetter = hours
+//     }
+//
+//     showTime() {
+//         console.log(`${this.hours}:${this.minutes}:${this.seconds}`)
+//     }
+// }
+//
+// const timer = new Time(200, 200, 200)
+// timer.setTime(59, 59, 20)
+// timer.showTime()
+
 
 // Task 04
 // Класс Покупатель: Фамилия, Имя, Адрес, Номер банковского счета;
