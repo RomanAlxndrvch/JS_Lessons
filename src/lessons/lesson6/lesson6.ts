@@ -1,3 +1,5 @@
+import {log} from "util";
+
 console.log('Lesson 6');
 
 // Class
@@ -112,44 +114,98 @@ console.log('Lesson 6');
 // Создать массив объектов данного класса.
 // Вывести список покупателей в алфавитном порядке и список покупателей, у которых номер кредитной карточки находится в заданном диапазоне.
 
-class buyer{
-    name:string
-    lastName :string
-    address:string
-    cardNumber:number
-
-    constructor(name:string,lastName:string,address:string,cardNumber:number) {
-        this.name = name
-        this.lastName = lastName
-        this.address = address
-        this.cardNumber = cardNumber
-    }
-
-    get buyerName (){
-        return  this.name
-    }
-
-    get buyerLastName (){
-        return this.lastName
-    }
-
-    get buyerAddress (){
-        return this.address
-    }
-
-    get buyerCardNumber (){
-        return this.cardNumber
-    }
-}
-const buyer1 = new buyer('Roman','Troian','Canada',123)
-
-console.log(buyer1.buyerName)
+// class Buyer{
+//     name:string
+//     lastName :string
+//     address:string
+//     cardNumber:number
+//
+//     constructor(name:string,lastName:string,address:string,cardNumber:number) {
+//         this.name = name
+//         this.lastName = lastName
+//         this.address = address
+//         this.cardNumber = cardNumber
+//     }
+//
+//     get buyerName (){
+//         return  this.name
+//     }
+//     get buyerLastName (){
+//         return this.lastName
+//     }
+//     get buyerAddress (){
+//         return this.address
+//     }
+//     get buyerCardNumber (){
+//         return this.cardNumber
+//     }
+//     set setBuyerName(name:string){
+//         this.name =name
+//     }
+//     set setBuyerLastName(lastName:string){
+//         this.lastName =lastName
+//     }
+//     set setBuyerAddress(address:string){
+//         this.address =address
+//     }
+//     set setBuyerCardNumber(cardNumber:number){
+//         this.cardNumber =cardNumber
+//     }
+//
+//    showName(arr: Buyer[]){
+//        arr.sort(function(a, b){
+//            if(a.name < b.name) { return -1; }
+//            if(a.name > b.name) { return 1; }
+//            return 0;
+//        }).forEach(el=>console.log(el.name))
+//    }
+//
+//
+// }
+// const buyers = [
+//     new Buyer('Roman','Trioan','3121 9st n',3303),
+//     new Buyer('Anastasiia','Trioan','3121 9st n',8914),
+//     new Buyer('Alex','Prokopenko','2211 1st w',5505),
+//     new Buyer('Diana','Paternak','33421 2st s',4428)
+// ]
+//
+// buyers[0].showName(buyers)
+//
+//
 
 // Task 05
 // Создать класс машина - имеющий марку, число цилиндров, мощность. Определить конструктор и функцию печати.
 // Создать производный класс – грузовик, имеющий грузоподъемность кузова.
 // Определить функции переназначения марки и грузоподъемности.
 
+// class Car {
+//     brand:string
+//     cylinders:number
+//     horsePower:number
+//     constructor(brand:string,cylinders:number,horsePower:number) {
+//         this.brand = brand
+//         this.cylinders =cylinders
+//         this.horsePower = horsePower
+//     }
+// }
+//
+//
+// class Truck extends Car{
+//     maxWeight:number
+//     constructor(brand:string,cylinders:number,horsePower:number,maxWeight:number) {
+//         super(brand,cylinders,horsePower);
+//         this.maxWeight =maxWeight
+//     }
+//
+//     set newBrand(brand:string){
+//          this.brand = brand
+//     }
+// }
+//
+// const ford = new Truck('Ford',6,300,2000)
+// console.log(ford)
+// ford.newBrand = 'GMS'
+// console.log(ford)
 // just a plug
 export default () => {
 };
